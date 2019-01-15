@@ -1,0 +1,127 @@
+Regular Expressions in Python:
+
+---------------------------------------------------------------------------------------------------------------
+a, X, 9
+ordinary characters just match themselves exactly. 
+
+. ^ $ * + ? { [ ]  | ( ) 
+meta-characters with special meanings (see below)
+ 
+. (a period)
+matches any single character except newline 'n'
+
+w    
+matches a "word" character: a letter or digit or underbar [a-zA-Z0-9_]. 
+It only matches a single character not a whole word.
+
+W 
+matches any non-word character.
+
+w+
+matches one or more words / characters
+
+b 
+boundary between word and non-word
+
+s 
+matches a single whitespace character, space, newline, return, tab, form
+
+S 
+matches any non-whitespace character.
+
+t, n, r 
+tab, newline, return
+
+D
+matches anything but a digit
+
+d 
+matches a decimal digit [0-9]
+
+d{1,5}
+matches a digit between 1 and 5 in lengths. 
+
+{n} d{5}
+matches for 5 digits in a row
+
+^
+match the start of the string
+
+$
+match the of the string end
+
+*
+matches 0 or more repetitions
+
+?
+matches 0 or 1 characters of whatever precedes it
+
+ 
+use . to match a period or  to match a slash. 
+
+---------------------------------------------------------------------------------------------------------
+
+re.findall
+The findall() is probably the single most powerful function in the re module
+We can also apply this for files. If you have a file and want to iterate over
+the lines of the file, just feed it into findall() and let it return a list of
+all the matches in a single step 
+
+read() returns the whole text of a file in a single string. 
+
+-----------------------------------------------------------------------------------------------------------
+
+re.search
+The re.search() method takes a regular expression pattern and a string and
+searches for that pattern within the string. 
+
+The syntax is re.search(pattern, string). 
+
+where:
+pattern
+regular expression to be matched.
+
+string
+the string which would be searched to match the pattern anywhere in the string.
+It searches for first occurrence of RE pattern within string with optional flags.
+
+If the search is successful, search() returns a match object or None otherwise.
+
+Therefore, the search is usually immediately followed by an if-statement to test
+if the search succeeded.
+
+It is common to use the 'r' at the start of the pattern string, that designates
+a python "raw" string which passes through backslashes without change which is
+very handy for regular expressions.
+
+----------------------------------------------------------------------------------------------------------------
+re.sub
+The re.sub() function in the re module can be used to replace substrings. 
+
+The syntax for re.sub() is re.sub(pattern,repl,string). 
+
+That will replace the matches in string with repl. 
+
+-------------------------------------------------------------------------------------------------------------------
+re.compile
+re.compile() function is used to compile pattern into pattern objects, 
+which have methods for various operations such as searching for pattern matches
+or performing string substitutions. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+Find Email Domain in Address
+Let's end this article about regular expressions in Python with a neat script I
+found on stackoverflow.
+
+@ 
+scan till you see this character
+
+[w.] 
+a set of characters to potentially match, so w is all alphanumeric characters, 
+and the trailing period . adds to that set of characters.
+
++ 
+one or more of the previous set.
+ So the pattern for email doamin is:
+ pattern="@[w.]+"
