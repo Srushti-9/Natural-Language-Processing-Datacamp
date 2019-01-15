@@ -1,0 +1,16 @@
+Open Command Prompt , and then type the following 3 commands:
+
+python -mpip install -U pip
+python -mpip install -U matplotlib
+python -mpip install -U nose
+
+
+This would install numpy,matplotlib and nose libraries.
+In these commands, pip is the Python Installation Program.
+It knows how to find packages on the web and to keep versions consistent with each other. 
+The matplotlib package is one that we will use extensively in this course. Installing it automatically causes the correct supporting version of numpy to be installed.
+Finally, nose is a comprehensive test package for the numpy package; we will use it to verify our installation.
+And if you want to check what is installed, type the command
+pip list
+
+This will list the programs that pip knows about as shown in jpg file.
