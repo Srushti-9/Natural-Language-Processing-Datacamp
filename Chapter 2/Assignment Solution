@@ -16,6 +16,10 @@ bow_simple = Counter(lower_tokens)
 # Print the 10 most common tokens
 print(bow_simple.most_common(10))
 
+------------------------------------------------------------------------------------------------------------------
+
+Which of the following are useful text preprocessing steps?
+Ans:Lemmatization, lowercasing, removing unwanted tokens
 
 #---------------------------------------------------------------------------------------------------------------#
 
